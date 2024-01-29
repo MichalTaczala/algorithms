@@ -1,0 +1,551 @@
+base ❯ telnet -e# 10.14.0.223 44302
+Telnet escape character is '#'.
+Trying 10.14.0.223...
+Connected to 10.14.0.223.
+Escape character is '#'.
+Connected to Dynamips VM "R2" (ID 3, type c3600) - Console port
+Press ENTER to get the prompt.
+ROMMON emulation microcode.
+
+                           Launching IOS image at 0x80008000...
+
+                                                               Smart Init is disabled. IOMEM set to: 5
+
+                                                                                                        Using iomem percentage: 5
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, 3600 Software (C3640-A3JS-M), Version 12.4(25d), RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2010 by Cisco Systems, Inc.
+Compiled Wed 18-Aug-10 06:58 by prod_rel_team
+
+Cisco 3640 (R4700) processor (revision 0xFF) with 124928K/6144K bytes of memory.
+Processor board ID FF1045C5
+R4700 CPU at 100MHz, Implementation 33, Rev 1.2
+4 Ethernet interfaces
+DRAM configuration is 64 bits wide with parity enabled.
+125K bytes of NVRAM.
+8192K bytes of processor board System flash (Read/Write)
+
+SETUP: new interface Ethernet0/0 placed in "shutdown" state
+SETUP: new interface Ethernet0/1 placed in "shutdown" state
+SETUP: new interface Ethernet0/2 placed in "shutdown" state
+SETUP: new interface Ethernet0/3 placed in "shutdown" state
+
+
+Press RETURN to get started!
+
+
+*Mar  1 00:00:06.683: %LINEPROTO-5-UPDOWN: Line protocol on Interface VoIP-Null0, changed state to up
+*Mar  1 00:00:06.691: %LINK-3-UPDOWN: Interface Ethernet0/0, changed state to up
+*Mar  1 00:00:06.695: %LINK-3-UPDOWN: Interface Ethernet0/1, changed state to up
+*Mar  1 00:00:06.703: %LINK-3-UPDOWN: Interface Ethernet0/2, changed state to up
+*Mar  1 00:00:06.707: %LINK-3-UPDOWN: Interface Ethernet0/3, changed state to up
+*Mar  1 00:00:06.715: %LINEPROTO-5-UPDOWN: Line protocol on Interface IPv6-mpls, changed state to up
+*Mar  1 00:00:07.003: %SYS-5-CONFIG_I: Configured from memory by console
+*Mar  1 00:00:07.311: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, 3600 Software (C3640-A3JS-M), Version 12.4(25d), RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2010 by Cisco Systems, Inc.
+Compiled Wed 18-Aug-10 06:58 by prod_rel_team
+*Mar  1 00:00:07.331: %SNMP-5-COLDSTART: SNMP agent on host R2 is undergoing a cold start
+*Mar  1 00:00:07.691: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/0, changed state to down
+*Mar  1 00:00:07.695: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/1, changed state to down
+*Mar  1 00:00:07.707: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/2, changed state to down
+*Mar  1 00:00:07.711: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/3, changed state to down
+*Mar  1 00:00:09.007: %LINK-5-CHANGED: Interface Ethernet0/0, changed state to administratively down
+*Mar  1 00:00:09.015: %LINK-5-CHANGED: Interface Ethernet0/1, changed state to administratively down
+*Mar  1 00:00:09.023: %LINK-5-CHANGED: Interface Ethernet0/2, changed state to administratively down
+*Mar  1 00:00:09.027: %LINK-5-CHANGED: Interface Ethernet0/3, changed state to administratively down 2023-12-16 11:00:12 ride3ZpX1xx6CypF
+R2#siema
+Translating "siema"
+
+Translating "siema"
+% Unknown command or computer name, or unable to find computer address
+R2#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#interface loopback0
+R2(config-if)#
+*Mar  1 00:25:06.487: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+R2(config-if)#ip address 2.2.2.2 255.255.255.255
+R2(config-if)#no shutdown
+R2(config-if)#exit
+R2(config)#interface e0/0
+R2(config-if)#ip address 10.0.12.2 255.255.255.252
+R2(config-if)#no shutdown
+R2(config-if)#exit
+R2(config)#
+*Mar  1 00:25:44.375: %LINK-3-UPDOWN: Interface Ethernet0/0, changed state to up
+*Mar  1 00:25:45.375: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/0, changed state to up
+R2(config)#interface e0/1
+R2(config-if)#ip address 10.0.24.1 255.255.255.252
+R2(config-if)#no shutdown
+R2(config-if)#exit
+R2(config)#inter
+*Mar  1 00:26:14.387: %LINK-3-UPDOWN: Interface Ethernet0/1, changed state to up
+*Mar  1 00:26:15.387: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/1, changed state to up
+R2(config)#interface e0/2
+R2(config-if)#ip address 10.0.23.1 255.255.255.252
+R2(config-if)#no shutdown
+R2(config-if)#exit
+R2(config)#
+*Mar  1 00:26:41.215: %LINK-3-UPDOWN: Interface Ethernet0/2, changed state to up
+*Mar  1 00:26:42.215: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/2, changed state to up
+R2(config)#eixt
+            ^
+% Invalid input detected at '^' marker.
+
+R2(config)#exit
+R2#
+*Mar  1 00:26:45.895: %SYS-5-CONFIG_I: Configured from console by console
+R2#show cdp neighbor
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater
+
+Device ID        Local Intrfce     Holdtme    Capability  Platform  Port ID
+R3               Eth 0/2            163        R S I      3640      Eth 0/2
+R1               Eth 0/0            123        R S I      3640      Eth 0/0
+R4               Eth 0/1            172        R S I      3640      Eth 0/1
+R2#show cdp neighbor e0/0 detail
+-------------------------
+Device ID: R1
+Entry address(es):
+  IP address: 10.0.12.1
+Platform: Cisco 3640,  Capabilities: Router Switch IGMP
+Interface: Ethernet0/0,  Port ID (outgoing port): Ethernet0/0
+Holdtime : 172 sec
+
+Version :
+Cisco IOS Software, 3600 Software (C3640-A3JS-M), Version 12.4(25d), RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2010 by Cisco Systems, Inc.
+Compiled Wed 18-Aug-10 06:58 by prod_rel_team
+
+advertisement version: 2
+VTP Management Domain: ''
+Duplex: half
+
+R2#show cdp neighbor e0/1 detail
+-------------------------
+Device ID: R4
+Entry address(es):
+  IP address: 10.0.24.2
+Platform: Cisco 3640,  Capabilities: Router Switch IGMP
+Interface: Ethernet0/1,  Port ID (outgoing port): Ethernet0/1
+Holdtime : 152 sec
+
+Version :
+Cisco IOS Software, 3600 Software (C3640-A3JS-M), Version 12.4(25d), RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2010 by Cisco Systems, Inc.
+Compiled Wed 18-Aug-10 06:58 by prod_rel_team
+
+advertisement version: 2
+VTP Management Domain: ''
+Duplex: half
+
+R2#show cdp neighbor e0/2 detail
+-------------------------
+Device ID: R3
+Entry address(es):
+  IP address: 10.0.23.2
+Platform: Cisco 3640,  Capabilities: Router Switch IGMP
+Interface: Ethernet0/2,  Port ID (outgoing port): Ethernet0/2
+Holdtime : 140 sec
+
+Version :
+Cisco IOS Software, 3600 Software (C3640-A3JS-M), Version 12.4(25d), RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2010 by Cisco Systems, Inc.
+Compiled Wed 18-Aug-10 06:58 by prod_rel_team
+
+advertisement version: 2
+VTP Management Domain: ''
+Duplex: half
+
+R2#config temrinal
+            ^
+% Invalid input detected at '^' marker.
+
+R2#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#router ospf 1
+R2(config-router)#network 2.2.2.2 0.0.0.0 area 0
+R2(config-router)#network 10.0.12.0 0.0.0.3 area 0
+R2(config-router)#network 10.0.24.0. 0.0.0.3 area 0
+                                   ^
+% Invalid input detected at '^' marker.
+
+R2(config-router)#network 10.0.24.0 0.0.0.3 area 0
+R2(config-router)#network 10.0.23.0 0.0.0.3 area 0
+R2(config-router)#exit
+R2(config)#
+*Mar  1 00:48:31.071: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on Ethernet0/0 from LOADING to FULL, Loading Done
+R2(config)#interface e0/0
+R2(config-if)#ip ospf network point-to-point
+R2(config-if)#
+*Mar  1 00:48:44.495: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on Ethernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Mar  1 00:48:45.251: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on Ethernet0/0 from LOADING to FULL, Loading Done
+R2(config-if)#exit
+R2(config)#interface e0/1
+R2(config-if)#ip ospf network point-to-point
+R2(config-if)#exit
+R2(config)#interface e0/2
+R2(config-if)#ip ospf network point-to-point
+R2(config-if)#exit
+R2(config)#exit
+R2#
+*Mar  1 00:49:20.263: %SYS-5-CONFIG_I: Configured from console by console
+R2#
+*Mar  1 00:49:24.035: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on Ethernet0/0 from LOADING to FULL, Loading Done
+R2#
+*Mar  1 00:50:54.279: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on Ethernet0/1 from LOADING to FULL, Loading Done
+R2#
+*Mar  1 00:51:21.307: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on Ethernet0/1 from LOADING to FULL, Loading Done
+R2#
+*Mar  1 00:51:42.207: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on Ethernet0/2 from LOADING to FULL, Loading Done
+R2#
+*Mar  1 00:52:13.043: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on Ethernet0/2 from LOADING to FULL, Loading Done
+R2#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+     1.0.0.0/32 is subnetted, 1 subnets
+O       1.1.1.1 [110/11] via 10.0.12.1, 00:01:18, Ethernet0/0
+     2.0.0.0/32 is subnetted, 1 subnets
+C       2.2.2.2 is directly connected, Loopback0
+     3.0.0.0/32 is subnetted, 1 subnets
+O       3.3.3.3 [110/11] via 10.0.23.2, 00:01:18, Ethernet0/2
+     4.0.0.0/32 is subnetted, 1 subnets
+O       4.4.4.4 [110/11] via 10.0.24.2, 00:01:18, Ethernet0/1
+     5.0.0.0/32 is subnetted, 1 subnets
+O       5.5.5.5 [110/21] via 10.0.24.2, 00:01:18, Ethernet0/1
+                [110/21] via 10.0.23.2, 00:01:19, Ethernet0/2
+     10.0.0.0/30 is subnetted, 6 subnets
+C       10.0.12.0 is directly connected, Ethernet0/0
+C       10.0.24.0 is directly connected, Ethernet0/1
+C       10.0.23.0 is directly connected, Ethernet0/2
+O       10.0.45.0 [110/20] via 10.0.24.2, 00:01:31, Ethernet0/1
+O       10.0.34.0 [110/20] via 10.0.24.2, 00:01:31, Ethernet0/1
+                  [110/20] via 10.0.23.2, 00:01:31, Ethernet0/2
+O       10.0.35.0 [110/20] via 10.0.23.2, 00:01:31, Ethernet0/2
+R2#ping 1.1.1.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 8/40/80 ms
+R2#ping 3.3.3.3
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 3.3.3.3, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 52/170/236 ms
+R2#ping 4.4.4.4
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 4.4.4.4, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 16/50/116 ms
+R2#ping 5.5.5.5
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 5.5.5.5, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 36/84/208 ms
+R2#show ip ospf interface | include protocol | Cost
+Loopback0 is up, line protocol is up
+  Process ID 1, Router ID 2.2.2.2, Network Type LOOPBACK, Cost: 1
+Ethernet0/2 is up, line protocol is up
+  Process ID 1, Router ID 2.2.2.2, Network Type POINT_TO_POINT, Cost: 10
+Ethernet0/1 is up, line protocol is up
+  Process ID 1, Router ID 2.2.2.2, Network Type POINT_TO_POINT, Cost: 10
+Ethernet0/0 is up, line protocol is up
+  Process ID 1, Router ID 2.2.2.2, Network Type POINT_TO_POINT, Cost: 10
+R2#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#interface e0/2
+R2(config-if)#ip ospf cost 100
+R2(config-if)#exit
+R2(config)#exit
+R2#
+*Mar  1 01:06:36.011: %SYS-5-CONFIG_I: Configured from console by console
+R2#show ip ospf interface | include protocol | Cost
+Loopback0 is up, line protocol is up
+  Process ID 1, Router ID 2.2.2.2, Network Type LOOPBACK, Cost: 1
+Ethernet0/2 is up, line protocol is up
+  Process ID 1, Router ID 2.2.2.2, Network Type POINT_TO_POINT, Cost: 100
+Ethernet0/1 is up, line protocol is up
+  Process ID 1, Router ID 2.2.2.2, Network Type POINT_TO_POINT, Cost: 10
+Ethernet0/0 is up, line protocol is up
+  Process ID 1, Router ID 2.2.2.2, Network Type POINT_TO_POINT, Cost: 10
+R2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#ip cef distributed
+                  ^
+% Invalid input detected at '^' marker.
+
+R2(config)#ip cef
+R2(config)#mpls ip
+R2(config)#interface 0/0
+                     ^
+% Invalid input detected at '^' marker.
+
+R2(config)#interface e0/0
+R2(config-if)#mpls ip
+R2(config-if)#exit
+R2(config)#interface e0/0
+*Mar  1 01:11:54.999: %LDP-5-NBRCHG: LDP Neighbor 1.1.1.1:0 (1) is UP
+R2(config)#interface e0/1
+R2(config-if)#mpls ip
+R2(config-if)#exit
+R2(config)#interface e0/2
+R2(config-if)#mpls ip
+R2(config-if)#exit
+R2(config)#
+*Mar  1 01:12:14.631: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (2) is UP
+R2(config)#exit
+R2#
+*Mar  1 01:12:20.715: %SYS-5-CONFIG_I: Configured from console by console
+R2#
+*Mar  1 01:12:34.903: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (3) is UP
+R2#show mpls interfaces
+Interface              IP            Tunnel   Operational
+Ethernet0/0            Yes (ldp)     No       Yes
+Ethernet0/1            Yes (ldp)     No       Yes
+Ethernet0/2            Yes (ldp)     No       Yes
+R2#show mpls ldp neighbor
+    Peer LDP Ident: 1.1.1.1:0; Local LDP Ident 2.2.2.2:0
+	TCP connection: 1.1.1.1.646 - 2.2.2.2.30770
+	State: Oper; Msgs sent/rcvd: 18/18; Downstream
+	Up time: 00:03:43
+	LDP discovery sources:
+	  Ethernet0/0, Src IP addr: 10.0.12.1
+        Addresses bound to peer LDP Ident:
+          10.0.12.1       1.1.1.1
+    Peer LDP Ident: 3.3.3.3:0; Local LDP Ident 2.2.2.2:0
+	TCP connection: 3.3.3.3.52653 - 2.2.2.2.646
+	State: Oper; Msgs sent/rcvd: 17/17; Downstream
+	Up time: 00:03:24
+	LDP discovery sources:
+	  Ethernet0/2, Src IP addr: 10.0.23.2
+        Addresses bound to peer LDP Ident:
+          10.0.35.1       10.0.23.2       10.0.34.1       3.3.3.3
+    Peer LDP Ident: 4.4.4.4:0; Local LDP Ident 2.2.2.2:0
+	TCP connection: 4.4.4.4.21873 - 2.2.2.2.646
+	State: Oper; Msgs sent/rcvd: 17/17; Downstream
+	Up time: 00:03:03
+	LDP discovery sources:
+	  Ethernet0/1, Src IP addr: 10.0.24.2
+        Addresses bound to peer LDP Ident:
+
+R2#show mpls ldp binding
+  tib entry: 1.1.1.1/32, rev 2
+	local binding:  tag: 16
+	remote binding: tsr: 1.1.1.1:0, tag: imp-null
+	remote binding: tsr: 3.3.3.3:0, tag: 16
+	remote binding: tsr: 4.4.4.4:0, tag: 16
+  tib entry: 2.2.2.2/32, rev 4
+	local binding:  tag: imp-null
+	remote binding: tsr: 1.1.1.1:0, tag: 16
+	remote binding: tsr: 3.3.3.3:0, tag: 17
+	remote binding: tsr: 4.4.4.4:0, tag: 17
+  tib entry: 3.3.3.3/32, rev 6
+	local binding:  tag: 17
+	remote binding: tsr: 1.1.1.1:0, tag: 17
+	remote binding: tsr: 3.3.3.3:0, tag: imp-null
+	remote binding: tsr: 4.4.4.4:0, tag: 18
+  tib entry: 4.4.4.4/32, rev 8
+	local binding:  tag: 18
+	remote binding: tsr: 1.1.1.1:0, tag: 18
+	remote binding: tsr: 3.3.3.3:0, tag: 18
+	remote binding: tsr: 4.4.4.4:0, tag: imp-null
+  tib entry: 5.5.5.5/32, rev 10
+	local binding:  tag: 19
+	remote binding: tsr: 1.1.1.1:0, tag: 19
+
+R2#show mpls forwarding-table
+Local  Outgoing    Prefix            Bytes tag  Outgoing   Next Hop
+tag    tag or VC   or Tunnel Id      switched   interface
+16     Pop tag     1.1.1.1/32        0          Et0/0      10.0.12.1
+17     18          3.3.3.3/32        0          Et0/1      10.0.24.2
+18     Pop tag     4.4.4.4/32        0          Et0/1      10.0.24.2
+19     19          5.5.5.5/32        0          Et0/1      10.0.24.2
+20     Pop tag     10.0.45.0/30      0          Et0/1      10.0.24.2
+21     Pop tag     10.0.34.0/30      0          Et0/1      10.0.24.2
+22     22          10.0.35.0/30      0          Et0/1      10.0.24.2
+R2#show mpls forwarding-table 5.5.5.5 detail
+Local  Outgoing    Prefix            Bytes tag  Outgoing   Next Hop
+tag    tag or VC   or Tunnel Id      switched   interface
+19     19          5.5.5.5/32        0          Et0/1      10.0.24.2
+	MAC/Encaps=14/18, MRU=1500, Tag Stack{19}
+	CC00558B0001CC03558B00018847 00013000
+	No output feature configured
+    Per-packet load-sharing
+R2#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#router ospf 1
+R2(config-router)#mpls traffic-eng area 0
+R2(config-router)#mpls traffic-eng router-id loopback0
+R2(config-router)#exit
+R2(config)#exit
+R2#
+*Mar  1 01:50:31.515: %SYS-5-CONFIG_I: Configured from console by console
+R2#config termianl
+               ^
+% Invalid input detected at '^' marker.
+
+R2#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#interface e0/0
+R2(config-if)#exit
+R2(config)#mpls traffic-eng tunnels
+R2(config)#interface e0/0
+R2(config-if)#mpls traffic-eng tunnels
+R2(config-if)#exit
+R2(config)#interface e0/1
+R2(config-if)#mpls traffic-eng tunnels
+R2(config-if)#exit
+R2(config)#interface e0/2
+R2(config-if)#exit
+R2(config)#exit
+R2#
+*Mar  1 01:53:01.755: %SYS-5-CONFIG_I: Configured from console by console
+R2#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#interface e0/1
+R2(config-if)#ip rsvp bandwidth 64
+R2(config-if)#exit
+R2(config)#interface e0/0
+R2(config-if)#ip rsvp bandwidth 512
+R2(config-if)#exit
+R2(config)#interface e0/2
+R2(config-if)#ip rsvp bandwidth 512
+R2(config-if)#exit
+R2(config)#exit
+R2#
+*Mar  1 02:13:16.711: %SYS-5-CONFIG_I: Configured from console by console
+R2#show mpls interfaces
+Interface              IP            Tunnel   Operational
+Ethernet0/0            Yes (ldp)     Yes      Yes
+Ethernet0/1            Yes (ldp)     Yes      Yes
+Ethernet0/2            Yes (ldp)     No       Yes
+R2#show ip rsvp interface
+interface    allocated  i/f max  flow max sub max
+Et0/0        0          512K     512K     0
+Et0/1        0          64K      64K      0
+Et0/2        0          512K     512K     0
+R2#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#interface e0/2
+R2(config-if)#mpls traffic-eng tunnels
+R2(config-if)#ip rsvp bandwith 512
+                            ^
+% Invalid input detected at '^' marker.
+
+R2(config-if)#exit
+R2(config)#exit
+R2#
+*Mar  1 02:17:42.199: %SYS-5-CONFIG_I: Configured from console by console
+R2#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#interface e0/1
+R2(config-if)#ip rsvp bandwidth 512
+R2(config-if)#exit
+R2(config)#exit
+R2#
+*Mar  1 02:29:42.623: %SYS-5-CONFIG_I: Configured from console by console
+R2#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#interface e0/2
+R2(config-if)#ip rsvp bandwidth 64
+R2(config-if)#exit
+R2(config)#exit
+R2#
+*Mar  1 02:31:45.251: %SYS-5-CONFIG_I: Configured from console by console
+R2#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#interface e0/2
+R2(config-if)#ip rsvp bandwidth 512
+R2(config-if)#exit
+R2(config)#exit
+R2#
+*Mar  1 02:39:35.231: %SYS-5-CONFIG_I: Configured from console by console
+R2#show mpls interfaces
+Interface              IP            Tunnel   Operational
+Ethernet0/0            Yes (ldp)     Yes      Yes
+Ethernet0/1            Yes (ldp)     Yes      Yes
+Ethernet0/2            Yes (ldp)     Yes      Yes
+R2#show ip ospf mpls traffic-eng link
+
+            OSPF Router with ID (2.2.2.2) (Process ID 1)
+
+  Area 0 has 3 MPLS TE links. Area instance is 15.
+
+  Links in hash bucket 8.
+    Link is associated with fragment 2. Link instance is 15
+      Link connected to Point-to-Point network
+      Link ID : 3.3.3.3
+      Interface Address : 10.0.23.1
+      Neighbor Address : 10.0.23.2
+      Admin Metric te: 100 igp: 100
+      Maximum bandwidth : 1250000
+      Maximum reservable bandwidth : 64000
+      Number of Priority : 8
+      Priority 0 : 64000       Priority 1 : 64000
+      Priority 2 : 64000       Priority 3 : 64000
+      Priority 4 : 64000       Priority 5 : 64000
+      Priority 6 : 64000       Priority 7 : 32000
+      Affinity Bit : 0x0
+
+  Links in hash bucket 9.
+    Link is associated with fragment 1. Link instance is 15
+
+R2#show running-config
+Building configuration...
+
+Current configuration : 1573 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 5
+no ip icmp rate-limit unreachable
+!
+!
+ip cef
+no ip domain lookup
+!
+!
+
+R2#

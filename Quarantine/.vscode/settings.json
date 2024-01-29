@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.tmpl": "html",
+        "vector": "cpp",
+        "stack": "cpp",
+        "__tree": "cpp",
+        "map": "cpp",
+        "string": "cpp",
+        "limits": "cpp"
+    }
+}

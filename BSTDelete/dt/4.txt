@@ -1,0 +1,756 @@
+Last login: Sun Jan 14 13:14:27 on ttys038
+
+~
+base ❯ telnet -e# 10.14.0.225 11404
+Telnet escape character is '#'.
+Trying 10.14.0.225...
+Connected to 10.14.0.225.
+Escape character is '#'.
+Connected to Dynamips VM "R4" (ID 0, type c3600) - Console port
+Press ENTER to get the prompt.
+ROMMON emulation microcode.
+
+                           Launching IOS image at 0x80008000...
+
+                                                               Smart Init is disabled. IOMEM set to: 5
+
+                        Using iomem percentage: 5
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, 3600 Software (C3640-A3JS-M), Version 12.4(25d), RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2010 by Cisco Systems, Inc.
+Compiled Wed 18-Aug-10 06:58 by prod_rel_team
+
+Cisco 3640 (R4700) processor (revision 0xFF) with 124928K/6144K bytes of memory.
+Processor board ID FF1045C5
+R4700 CPU at 100MHz, Implementation 33, Rev 1.2
+4 Ethernet interfaces
+DRAM configuration is 64 bits wide with parity enabled.
+125K bytes of NVRAM.
+8192K bytes of processor board System flash (Read/Write)
+
+SETUP: new interface Ethernet0/0 placed in "shutdown" state
+SETUP: new interface Ethernet0/1 placed in "shutdown" state
+SETUP: new interface Ethernet0/2 placed in "shutdown" state
+SETUP: new interface Ethernet0/3 placed in "shutdown" state
+
+
+Press RETURN to get started!
+
+
+*Mar  1 00:00:05.183: %LINEPROTO-5-UPDOWN: Line protocol on Interface VoIP-Null0, changed state to up
+*Mar  1 00:00:05.191: %LINK-3-UPDOWN: Interface Ethernet0/0, changed state to up
+*Mar  1 00:00:05.195: %LINK-3-UPDOWN: Interface Ethernet0/1, changed state to up
+*Mar  1 00:00:05.203: %LINK-3-UPDOWN: Interface Ethernet0/2, changed state to up
+*Mar  1 00:00:05.207: %LINK-3-UPDOWN: Interface Ethernet0/3, changed state to up
+*Mar  1 00:00:05.215: %LINEPROTO-5-UPDOWN: Line protocol on Interface IPv6-mpls, changed state to up
+*Mar  1 00:00:05.471: %SYS-5-CONFIG_I: Configured from memory by console
+*Mar  1 00:00:05.887: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, 3600 Software (C3640-A3JS-M), Version 12.4(25d), RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2010 by Cisco Systems, Inc.
+Compiled Wed 18-Aug-10 06:58 by prod_rel_team
+*Mar  1 00:00:05.907: %SNMP-5-COLDSTART: SNMP agent on host R4 is undergoing a cold start
+*Mar  1 00:00:06.335: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/0, changed state to down
+*Mar  1 00:00:06.335: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/1, changed state to down
+*Mar  1 00:00:06.339: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/2, changed state to down
+*Mar  1 00:00:06.343: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/3, changed state to down
+*Mar  1 00:00:07.475: %LINK-5-CHANGED: Interface Ethernet0/0, changed state to administratively down
+*Mar  1 00:00:07.483: %LINK-5-CHANGED: Interface Ethernet0/1, changed state to administratively down
+*Mar  1 00:00:07.487: %LINK-5-CHANGED: Interface Ethernet0/2, changed state to administratively down
+*Mar  1 00:00:07.491: %LINK-5-CHANGED: Interface Ethernet0/3, changed state to administratively down 2024-01-14 13:00:11 lYuw5sAb85kcwoeu
+R4#
+R4#
+R4#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R4(config)#interface Loopback0
+R4(config-if)#ip ad
+*Mar  1 00:41:39.771: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+R4(config-if)#ip address 4.4.4.4 255.255.255.255
+R4(config-if)#no shutdown
+R4(config-if)#exit
+R4(config)#interface Loopback1
+R4(config-if)#ip address
+*Mar  1 00:42:17.687: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback1, changed state to up
+R4(config-if)#ip address 192.168.41.1 255.255.255.0
+R4(config-if)#no shutdown
+R4(config-if)#exit
+R4(config)#interface Loopback2
+R4(config-if)#
+*Mar  1 00:42:52.819: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback2, changed state to up
+R4(config-if)#ip address 192.168.42.1 255.255.255.0
+R4(config-if)#no shutdown
+R4(config-if)#exit
+R4(config)#interface Loopback3
+R4(config-if)#ip addre
+*Mar  1 00:43:19.623: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback3, changed state to up
+R4(config-if)#ip address 192.168.43.1 255.255.255.0
+R4(config-if)#no shutdown
+R4(config-if)#exit
+R4(config)#interface  e0/1
+R4(config-if)#ip address 10.10.24.2 255.255.255.252
+R4(config-if)#no shutdown
+R4(config-if)#exit
+R4(config)#
+*Mar  1 00:47:35.783: %LINK-3-UPDOWN: Interface Ethernet0/1, changed state to up
+*Mar  1 00:47:36.783: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/1, changed state to up
+R4(config)#interface e0/2
+R4(config-if)#ip address 10.10.45.1 255.255.255.252
+R4(config-if)#no shutdown
+R4(config-if)#eixt
+               ^
+% Invalid input detected at '^' marker.
+
+R4(config-if)#exit
+R4(config)#
+*Mar  1 00:48:02.935: %LINK-3-UPDOWN: Interface Ethernet0/2, changed state to up
+*Mar  1 00:48:03.935: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/2, changed state to up
+R4(config)#interface e0/3
+R4(config-if)#ip address 10.10.34.2 255.255.255.252
+R4(config-if)#no shutdown
+R4(config-if)#exit
+R4(config)#
+*Mar  1 00:48:31.463: %LINK-3-UPDOWN: Interface Ethernet0/3, changed state to up
+*Mar  1 00:48:32.463: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/3, changed state to up
+R4(config)#exit
+R4#
+*Mar  1 00:48:40.867: %SYS-5-CONFIG_I: Configured from console by console
+R4#show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                unassigned      YES unset  administratively down down
+Ethernet0/1                10.10.24.2      YES manual up                    up
+Ethernet0/2                10.10.45.1      YES manual up                    up
+Ethernet0/3                10.10.34.2      YES manual up                    up
+Loopback0                  4.4.4.4         YES manual up                    up
+Loopback1                  192.168.41.1    YES manual up                    up
+Loopback2                  192.168.42.1    YES manual up                    up
+Loopback3                  192.168.43.1    YES manual up                    up
+R4#ping 10.10.24.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.10.24.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 116/117/120 ms
+R4#ping 10.10.45.2
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.10.45.2, timeout is 2 seconds:
+.!!!!
+Success rate is 80 percent (4/5), round-trip min/avg/max = 20/23/24 ms
+R4#ping 10.10.45.2
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.10.45.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 20/21/24 ms
+R4#ping 10.10.34.1
+
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.10.34.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 20/24/32 ms
+R4#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R4(config)#router bgp 400
+R4(config-router)#neighbor 10.10.24.1 remote-as 230
+R4(config-router)#neighbor 10.10.34.1 remote-as 230
+R4(config-router)#neighbor 10.10.45.2 remote-as 500
+R4(config-router)#exit
+R4(config)#exit
+R4#
+*Mar  1 02:27:35.699: %SYS-5-CONFIG_I: Configured from console by console
+R4#
+*Mar  1 02:28:42.791: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#
+*Mar  1 02:28:59.799: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 02:30:03.927: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#
+*Mar  1 02:30:24.291: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down Peer closed the session
+*Mar  1 02:30:25.059: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 02:30:29.163: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down Peer closed the session
+*Mar  1 02:30:29.959: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#clear ip bgp *
+R4#
+*Mar  1 02:30:33.059: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down Peer closed the session
+*Mar  1 02:30:33.331: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#
+*Mar  1 02:30:34.463: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down User reset
+*Mar  1 02:30:34.467: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down User reset
+*Mar  1 02:30:34.471: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down User reset
+R4#
+*Mar  1 02:30:35.675: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+*Mar  1 02:30:35.939: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+*Mar  1 02:30:36.171: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#show ip bgp summary
+BGP router identifier 192.168.43.1, local AS number 400
+BGP table version is 1, main routing table version 1
+
+Neighbor        V    AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.10.24.1      4   230      10      10        0    0    0 00:00:23        0
+10.10.34.1      4   230      12      11        0    0    0 00:00:23        0
+10.10.45.2      4   500      13      10        0    0    0 00:00:23        0
+R4#clear i
+*Mar  1 02:37:13.315: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down Peer closed the session
+R4#clear ip bgp
+*Mar  1 02:37:14.855: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#clear ip bgp *
+R4#
+*Mar  1 02:37:17.223: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down User reset
+*Mar  1 02:37:17.223: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down User reset
+*Mar  1 02:37:17.223: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down User reset
+*Mar  1 02:37:17.359: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#
+*Mar  1 02:37:18.647: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+*Mar  1 02:37:19.503: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 02:37:23.611: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down Peer closed the session
+*Mar  1 02:37:24.175: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+C    192.168.42.0/24 is directly connected, Loopback2
+     4.0.0.0/32 is subnetted, 1 subnets
+C       4.4.4.4 is directly connected, Loopback0
+C    192.168.43.0/24 is directly connected, Loopback3
+C    192.168.41.0/24 is directly connected, Loopback1
+     10.0.0.0/30 is subnetted, 3 subnets
+C       10.10.24.0 is directly connected, Ethernet0/1
+C       10.10.34.0 is directly connected, Ethernet0/3
+C       10.10.45.0 is directly connected, Ethernet0/2
+R4#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+B    192.168.31.0/24 [20/0] via 10.10.24.1, 00:02:16
+C    192.168.42.0/24 is directly connected, Loopback2
+     4.0.0.0/32 is subnetted, 1 subnets
+C       4.4.4.4 is directly connected, Loopback0
+C    192.168.43.0/24 is directly connected, Loopback3
+B    192.168.11.0/24 [20/0] via 10.10.24.1, 00:02:16
+C    192.168.41.0/24 is directly connected, Loopback1
+     10.0.0.0/30 is subnetted, 3 subnets
+C       10.10.24.0 is directly connected, Ethernet0/1
+C       10.10.34.0 is directly connected, Ethernet0/3
+C       10.10.45.0 is directly connected, Ethernet0/2
+R4#clear ip bgp *
+*Mar  1 02:44:15.315: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down Peer closed the session
+*Mar  1 02:44:15.371: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#clear ip bgp *
+R4#
+*Mar  1 02:44:17.843: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down User reset
+*Mar  1 02:44:17.843: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down User reset
+*Mar  1 02:44:17.847: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down User reset
+*Mar  1 02:44:18.611: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+*Mar  1 02:44:18.743: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+*Mar  1 02:44:18.755: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 02:44:21.871: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down Peer closed the session
+*Mar  1 02:44:22.479: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 02:44:30.583: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down Peer closed the session
+*Mar  1 02:44:30.879: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+B    192.168.31.0/24 [20/0] via 10.10.34.1, 00:00:51
+C    192.168.42.0/24 is directly connected, Loopback2
+     4.0.0.0/32 is subnetted, 1 subnets
+C       4.4.4.4 is directly connected, Loopback0
+C    192.168.43.0/24 is directly connected, Loopback3
+B    192.168.11.0/24 [20/0] via 10.10.24.1, 00:00:20
+C    192.168.41.0/24 is directly connected, Loopback1
+     10.0.0.0/30 is subnetted, 3 subnets
+C       10.10.24.0 is directly connected, Ethernet0/1
+C       10.10.34.0 is directly connected, Ethernet0/3
+C       10.10.45.0 is directly connected, Ethernet0/2
+R4#
+*Mar  1 02:46:01.579: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down Peer closed the session
+*Mar  1 02:46:02.243: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+B    192.168.31.0/24 [20/0] via 10.10.34.1, 00:01:16
+C    192.168.42.0/24 is directly connected, Loopback2
+     4.0.0.0/32 is subnetted, 1 subnets
+C       4.4.4.4 is directly connected, Loopback0
+C    192.168.43.0/24 is directly connected, Loopback3
+B    192.168.11.0/24 [20/0] via 10.10.24.1, 00:00:45
+C    192.168.41.0/24 is directly connected, Loopback1
+     10.0.0.0/30 is subnetted, 3 subnets
+C       10.10.24.0 is directly connected, Ethernet0/1
+C       10.10.34.0 is directly connected, Ethernet0/3
+C       10.10.45.0 is directly connected, Ethernet0/2
+R4#clear ip bgp *
+*Mar  1 02:48:04.347: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down Peer closed the session
+*Mar  1 02:48:04.911: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#clear ip bgp *
+R4#
+*Mar  1 02:48:07.059: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down User reset
+*Mar  1 02:48:07.059: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down User reset
+*Mar  1 02:48:07.059: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down User reset
+*Mar  1 02:48:07.291: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+*Mar  1 02:48:07.559: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+*Mar  1 02:48:07.707: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#
+*Mar  1 02:48:10.815: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down Peer closed the session
+*Mar  1 02:48:11.423: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 02:48:15.527: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down Peer closed the session
+*Mar  1 02:48:16.083: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#clear ip bgp *
+R4#
+*Mar  1 02:53:00.319: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down Peer closed the session
+*Mar  1 02:53:00.543: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#
+*Mar  1 02:53:01.663: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down User reset
+*Mar  1 02:53:01.663: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down User reset
+*Mar  1 02:53:01.667: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down User reset
+*Mar  1 02:53:02.351: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+*Mar  1 02:53:02.483: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+*Mar  1 02:53:02.539: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 02:53:04.643: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down Peer closed the session
+*Mar  1 02:53:04.911: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 02:53:13.019: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down Peer closed the session
+*Mar  1 02:53:13.983: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#
+*Mar  1 02:54:28.523: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down Peer closed the session
+*Mar  1 02:54:28.571: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 02:56:56.299: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down Peer closed the session
+R4#
+*Mar  1 02:56:58.023: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+B    192.168.31.0/24 [20/0] via 10.10.34.1, 00:01:10
+C    192.168.42.0/24 is directly connected, Loopback2
+     4.0.0.0/32 is subnetted, 1 subnets
+C       4.4.4.4 is directly connected, Loopback0
+C    192.168.43.0/24 is directly connected, Loopback3
+B    192.168.11.0/24 [20/0] via 10.10.24.1, 00:04:53
+C    192.168.41.0/24 is directly connected, Loopback1
+     10.0.0.0/30 is subnetted, 3 subnets
+C       10.10.24.0 is directly connected, Ethernet0/1
+C       10.10.34.0 is directly connected, Ethernet0/3
+C       10.10.45.0 is directly connected, Ethernet0/2
+R4#clear ip bgp *
+R4#
+*Mar  1 03:19:22.335: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down Peer closed the session
+*Mar  1 03:19:22.995: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#
+*Mar  1 03:19:24.143: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down User reset
+*Mar  1 03:19:24.147: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down User reset
+*Mar  1 03:19:24.147: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down User reset
+*Mar  1 03:19:24.431: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+*Mar  1 03:19:24.431: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+*Mar  1 03:19:24.511: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#
+*Mar  1 03:19:25.615: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down Peer closed the session
+*Mar  1 03:19:26.011: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 03:19:28.671: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down Peer closed the session
+*Mar  1 03:19:29.111: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+B    192.168.31.0/24 [20/0] via 10.10.24.1, 00:01:03
+C    192.168.42.0/24 is directly connected, Loopback2
+     4.0.0.0/32 is subnetted, 1 subnets
+C       4.4.4.4 is directly connected, Loopback0
+C    192.168.43.0/24 is directly connected, Loopback3
+B    192.168.11.0/24 [20/0] via 10.10.24.1, 00:01:03
+C    192.168.41.0/24 is directly connected, Loopback1
+     10.0.0.0/30 is subnetted, 3 subnets
+C       10.10.24.0 is directly connected, Ethernet0/1
+C       10.10.34.0 is directly connected, Ethernet0/3
+C       10.10.45.0 is directly connected, Ethernet0/2
+B    192.168.48.0/21 [20/0] via 10.10.45.2, 00:01:35
+R4#conf terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R4(config)#router bgp 400
+R4(config-router)#aggregate-address 192.168.40.0 255.255.248.0 summary-only
+R4(config-router)#network 192.168.41.1 mask 255.255.255.0
+% BGP: Incorrect network or mask configured
+R4(config-router)#network 192.168.41.0 mask 255.255.255.0
+R4(config-router)#network 192.168.42.0 mask 255.255.255.0
+R4(config-router)#network 192.168.43.0 mask 255.255.255.0
+R4(config-router)#exit
+R4(config)#exit
+R4#
+*Mar  1 03:27:25.543: %SYS-5-CONFIG_I: Configured from console by console
+R4#clear ip bgp *
+R4#
+*Mar  1 03:27:39.339: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down User reset
+*Mar  1 03:27:39.339: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down User reset
+*Mar  1 03:27:39.339: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down User reset
+*Mar  1 03:27:39.903: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#
+*Mar  1 03:27:40.603: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+*Mar  1 03:27:40.835: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 03:27:42.939: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down Peer closed the session
+*Mar  1 03:27:43.095: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#
+*Mar  1 03:27:44.199: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down Peer closed the session
+*Mar  1 03:27:44.383: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#
+*Mar  1 03:27:46.843: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down Peer closed the session
+*Mar  1 03:27:47.167: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+C    192.168.42.0/24 is directly connected, Loopback2
+     4.0.0.0/32 is subnetted, 1 subnets
+C       4.4.4.4 is directly connected, Loopback0
+C    192.168.43.0/24 is directly connected, Loopback3
+B    192.168.11.0/24 [20/0] via 10.10.24.1, 00:00:15
+C    192.168.41.0/24 is directly connected, Loopback1
+B    192.168.21.0/24 [20/0] via 10.10.24.1, 00:00:15
+     10.0.0.0/30 is subnetted, 3 subnets
+C       10.10.24.0 is directly connected, Ethernet0/1
+C       10.10.34.0 is directly connected, Ethernet0/3
+C       10.10.45.0 is directly connected, Ethernet0/2
+B    192.168.40.0/21 [200/0] via 0.0.0.0, 00:00:04, Null0
+R4#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+B    192.168.31.0/24 [20/0] via 10.10.34.1, 00:00:07
+C    192.168.42.0/24 is directly connected, Loopback2
+     4.0.0.0/32 is subnetted, 1 subnets
+C       4.4.4.4 is directly connected, Loopback0
+C    192.168.43.0/24 is directly connected, Loopback3
+B    192.168.11.0/24 [20/0] via 10.10.24.1, 00:00:30
+C    192.168.41.0/24 is directly connected, Loopback1
+B    192.168.21.0/24 [20/0] via 10.10.24.1, 00:00:30
+     10.0.0.0/30 is subnetted, 3 subnets
+C       10.10.24.0 is directly connected, Ethernet0/1
+C       10.10.34.0 is directly connected, Ethernet0/3
+C       10.10.45.0 is directly connected, Ethernet0/2
+B    192.168.40.0/21 [200/0] via 0.0.0.0, 00:00:19, Null0
+B    192.168.48.0/21 [20/0] via 10.10.45.2, 00:00:11
+R4#
+*Mar  1 03:29:01.103: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down Peer closed the session
+*Mar  1 03:29:01.319: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+B    192.168.31.0/24 [20/0] via 10.10.34.1, 00:00:21
+C    192.168.42.0/24 is directly connected, Loopback2
+     4.0.0.0/32 is subnetted, 1 subnets
+C       4.4.4.4 is directly connected, Loopback0
+C    192.168.43.0/24 is directly connected, Loopback3
+B    192.168.11.0/24 [20/0] via 10.10.24.1, 00:00:43
+C    192.168.41.0/24 is directly connected, Loopback1
+B    192.168.21.0/24 [20/0] via 10.10.24.1, 00:00:43
+     10.0.0.0/30 is subnetted, 3 subnets
+C       10.10.24.0 is directly connected, Ethernet0/1
+C       10.10.34.0 is directly connected, Ethernet0/3
+C       10.10.45.0 is directly connected, Ethernet0/2
+B    192.168.40.0/21 [200/0] via 0.0.0.0, 00:00:32, Null0
+B    192.168.48.0/21 [20/0] via 10.10.24.1, 00:00:09
+R4#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+B    192.168.31.0/24 [20/0] via 10.10.34.1, 00:01:03
+C    192.168.42.0/24 is directly connected, Loopback2
+     4.0.0.0/32 is subnetted, 1 subnets
+C       4.4.4.4 is directly connected, Loopback0
+C    192.168.43.0/24 is directly connected, Loopback3
+B    192.168.11.0/24 [20/0] via 10.10.24.1, 00:01:25
+C    192.168.41.0/24 is directly connected, Loopback1
+B    192.168.21.0/24 [20/0] via 10.10.24.1, 00:01:25
+     10.0.0.0/30 is subnetted, 3 subnets
+C       10.10.24.0 is directly connected, Ethernet0/1
+C       10.10.34.0 is directly connected, Ethernet0/3
+C       10.10.45.0 is directly connected, Ethernet0/2
+B    192.168.40.0/21 [200/0] via 0.0.0.0, 00:01:14, Null0
+B    192.168.48.0/21 [20/0] via 10.10.45.2, 00:00:02
+R4#clear ip bgp *
+R4#
+*Mar  1 03:34:12.851: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down Peer closed the session
+*Mar  1 03:34:13.295: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 03:34:14.415: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down User reset
+*Mar  1 03:34:14.415: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down User reset
+*Mar  1 03:34:14.415: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down User reset
+*Mar  1 03:34:15.267: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 03:34:16.079: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#
+*Mar  1 03:34:19.203: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down Peer closed the session
+*Mar  1 03:34:19.679: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#
+*Mar  1 03:34:48.683: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#
+*Mar  1 03:43:42.911: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down Peer closed the session
+*Mar  1 03:43:43.239: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#clear ip bgp *
+R4#
+*Mar  1 03:43:55.835: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down Peer closed the session
+*Mar  1 03:43:56.079: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#
+*Mar  1 03:43:57.187: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down User reset
+*Mar  1 03:43:57.187: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down User reset
+*Mar  1 03:43:57.187: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down User reset
+*Mar  1 03:43:57.235: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+*Mar  1 03:43:57.663: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+*Mar  1 03:43:57.911: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#cle
+*Mar  1 03:52:15.335: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down Peer closed the session
+R4#clear ip bgp
+% Incomplete command.
+
+R4#
+*Mar  1 03:52:17.115: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#clear ip bgp *
+R4#
+*Mar  1 03:52:22.235: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down User reset
+*Mar  1 03:52:22.235: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down User reset
+*Mar  1 03:52:22.235: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Down User reset
+*Mar  1 03:52:22.623: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+*Mar  1 03:52:23.079: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#
+*Mar  1 03:52:23.879: %BGP-5-ADJCHANGE: neighbor 10.10.45.2 Up
+R4#
+*Mar  1 03:52:26.983: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Down Peer closed the session
+*Mar  1 03:52:27.243: %BGP-5-ADJCHANGE: neighbor 10.10.34.1 Up
+R4#
+*Mar  1 03:52:53.891: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Down Peer closed the session
+R4#
+*Mar  1 03:52:55.815: %BGP-5-ADJCHANGE: neighbor 10.10.24.1 Up
+R4#show ip bgp
+BGP table version is 12, local router ID is 192.168.43.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal,
+              r RIB-failure, S Stale
+Origin codes: i - IGP, e - EGP, ? - incomplete
+
+   Network          Next Hop            Metric LocPrf Weight Path
+*> 192.168.11.0     10.10.24.1                             0 230 100 i
+*> 192.168.21.0     10.10.24.1               0             0 230 i
+*  192.168.31.0     10.10.45.2                             0 500 230 i
+*>                  10.10.24.1                             0 230 i
+*                   10.10.34.1               0             0 230 i
+*> 192.168.40.0/21  0.0.0.0                            32768 i
+s> 192.168.41.0     0.0.0.0                  0         32768 i
+s> 192.168.42.0     0.0.0.0                  0         32768 i
+s> 192.168.43.0     0.0.0.0                  0         32768 i
+*  192.168.48.0/21  10.10.24.1                             0 230 500 500 500 500 i
+*                   10.10.34.1                             0 230 500 500 500 500 i
+*>                  10.10.45.2               0             0 500 i
+R4#show running-config
+Building configuration...
+
+Current configuration : 1488 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R4
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 5
+no ip icmp rate-limit unreachable
+!
+!
+ip cef
+no ip domain lookup
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+!
+!
+!
+interface Loopback0
+ ip address 4.4.4.4 255.255.255.255
+!
+interface Loopback1
+ ip address 192.168.41.1 255.255.255.0
+!
+interface Loopback2
+ ip address 192.168.42.1 255.255.255.0
+!
+interface Loopback3
+ ip address 192.168.43.1 255.255.255.0
+!
+interface Ethernet0/0
+ no ip address
+ shutdown
+ half-duplex
+!
+interface Ethernet0/1
+ ip address 10.10.24.2 255.255.255.252
+ half-duplex
+!
+interface Ethernet0/2
+ ip address 10.10.45.1 255.255.255.252
+ half-duplex
+!
+interface Ethernet0/3
+ ip address 10.10.34.2 255.255.255.252
+ half-duplex
+!
+!
+router bgp 400
+ no synchronization
+ bgp log-neighbor-changes
+ network 192.168.41.0
+ network 192.168.42.0
+ network 192.168.43.0
+ aggregate-address 192.168.40.0 255.255.248.0 summary-only
+ neighbor 10.10.24.1 remote-as 230
+ neighbor 10.10.34.1 remote-as 230
+ neighbor 10.10.45.2 remote-as 500
+ no auto-summary
+!
+no ip http server
+ip forward-protocol nd
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+banner motd ^C 2024-01-14 13:00:11 lYuw5sAb85kcwoeu ^C
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+!
+end
+
+R4#

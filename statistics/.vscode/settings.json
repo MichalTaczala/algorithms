@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.tmpl": "html",
+        "vector": "cpp",
+        "limits": "cpp",
+        "ratio": "cpp",
+        "chrono": "cpp",
+        "algorithm": "cpp"
+    }
+}
